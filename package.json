@@ -1,0 +1,16 @@
+{
+  "name": "spliteasy",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "npm run dev --workspace=@spliteasy/frontend & npm run dev --workspace=@spliteasy/backend",
+    "build": "npm run build --workspaces",
+    "test": "npm run test --workspaces",
+    "lint": "npm run lint --workspaces",
+    "type-check": "npm run type-check --workspaces",
+    "db:generate": "npm run prisma:generate --workspace=@spliteasy/backend",
+    "db:migrate": "npm run prisma:migrate --workspace=@spliteasy/backend"
+  }
+}
