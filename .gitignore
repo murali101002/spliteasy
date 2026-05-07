@@ -8,3 +8,4 @@ coverage/
 graphify-out/
 .claude/
 *.tsbuildinfo
+.vercel
