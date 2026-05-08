@@ -12,7 +12,13 @@ const app = express();
 
 app.use(
   cors({
-    origin: config.frontendUrl,
+    origin: (origin, callback) => {
+      const allowed = !origin ||
+        origin.endsWith('.vercel.app') ||
+        origin.startsWith('http://localhost:') ||
+        origin === config.frontendUrl;
+      callback(null, allowed ? origin : false);
+    },
     credentials: true,
   })
 );
